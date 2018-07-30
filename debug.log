@@ -1,0 +1,6 @@
+[0730/183951.202:ERROR:process_info.cc(350)] VirtualQueryEx: Отказано в доступе. (0x5)
+[0730/183951.203:ERROR:process_info.cc(571)] ReadMemoryInfo failed
+[0730/183951.206:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0730/183951.206:ERROR:exception_snapshot_win.cc(87)] thread ID 25188 not found in process
+[0730/183951.206:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0730/183951.206:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: Попытка доступа к процессу, выполняющему процедуру завершения.  (0xc000010a)
