@@ -7,3 +7,11 @@ export const validateYear = value => {
 }
 
 export const validateText = value => (value ? undefined : 'Please fill this field');
+
+export const validateRuntime = value => {
+  if (value) {
+    return (value > 0 ? undefined : 'Invalid runtime');
+  } else {
+    return undefined;
+  }
+}

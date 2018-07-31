@@ -12,7 +12,7 @@ export default class Movie extends Component {
           <time className='movie__date'>Year: {movie.year}</time>
           <ul className='movie__genres-list'>
             Genres:
-            {movie.genres.map((g, idx) => {
+            {movie.genres && movie.genres.map((g, idx) => {
               return <li key={idx} className='movie__genre'>{g}</li>
             })}
           </ul>

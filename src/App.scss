@@ -189,3 +189,7 @@ h3 {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+
+textarea {
+  resize: none;
+}

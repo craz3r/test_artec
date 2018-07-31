@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { renderField, renderTextarea } from '../shared/fields';
 import { NotificationManager } from 'react-notifications';
-import { validateYear, validateText } from '../../helpers/validators';
+import { validateYear, validateText, validateRuntime } from '../../helpers/validators';
 import './style.scss';
 
 class MovieAdd extends Component {
@@ -25,7 +25,7 @@ class MovieAdd extends Component {
             <Field type='number' component={renderField} name='year' id='year' validate={validateYear} placeholder='Enter year' label='Year' />
           </div>
           <div className='field runtime'>
-            <Field type='number' component={renderField} name='runtime' id='runtime' placeholder='Enter runtime' label='Runtime' />
+            <Field type='number' component={renderField} name='runtime' id='runtime' validate={validateRuntime} placeholder='Enter runtime' label='Runtime' />
           </div>
           <div className='field genres'>
             <Field component='select' name='genres' id='genres' multiple>
