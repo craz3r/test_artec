@@ -11,7 +11,7 @@ export default class MoviesList extends Component {
     } else {
       return (
         <section className='movies'>
-          <h2 className='movies__title'>Movies</h2>
+          <h1 className='movies__title'>Movies</h1>
           <ul className='movies__list'>
             {movies.map(m => {
               return <li key={m.id}><Movie movie={m} moreHandler={this.props.setCurrentMovie} match={this.props.match}/></li>

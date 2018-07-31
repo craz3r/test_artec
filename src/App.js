@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import MoviesContainer from './containers/movies';
 import MovieDetailContainer from './containers/movie-detail';
 import MovieAddContainer from './containers/movie-add';
 import MovieEditContainer from './containers/movie-edit';
 import { Switch, Route, Link } from 'react-router-dom';
+import './App.css';
+import 'react-notifications/lib/notifications.css';
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <div className='App'>
         <header className='header'>
           <div className='container'>
-            <h1 className='header__title'>Welcome to Movies App</h1>
+            <p className='header__title'>Welcome to Movies App</p>
             <nav className='header__nav'>
               <ul>
                 <li><Link to='/' className='header__link'>List of movies</Link></li>
