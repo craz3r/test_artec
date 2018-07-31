@@ -3,6 +3,7 @@ import MoviesContainer from './containers/movies';
 import MovieDetailContainer from './containers/movie-detail';
 import MovieAddContainer from './containers/movie-add';
 import MovieEditContainer from './containers/movie-edit';
+import { NotificationContainer } from 'react-notifications';
 import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import 'react-notifications/lib/notifications.css';
@@ -39,6 +40,7 @@ class App extends Component {
             </p>
           </div>
         </footer>
+        <NotificationContainer />
       </div>
     );
   }

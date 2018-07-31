@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { renderField, renderTextarea } from '../shared/fields';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
+import { validateYear, validateText } from '../../helpers/validators';
 import './style.scss';
-
-const validateYear = value => (value > 0 && value < (new Date()).getFullYear() + 1 ? undefined : 'Invalid year');
-const validateText = value => (value !== '' ? undefined : 'Please fill this field');
 
 class MovieAdd extends Component {
   addMovie = (values) => {
@@ -21,7 +19,7 @@ class MovieAdd extends Component {
         <h1 className='add__title'>Add new movie</h1>
         <form className='add__form' onSubmit={this.props.handleSubmit(this.addMovie)}>
           <div className='field title'>
-            <Field type='text' component={renderField} required={true} name='title' id='title' validate={validateText} placeholder='Enter title' label='Title' />
+            <Field type='text' component={renderField} name='title' id='title' required={true} validate={validateText} placeholder='Enter title' label='Title' />
           </div>
           <div className='field year'>
             <Field type='number' component={renderField} name='year' id='year' validate={validateYear} placeholder='Enter year' label='Year' />
@@ -46,16 +44,15 @@ class MovieAdd extends Component {
             <Field type='text' component={renderField} name='actors' id='actors' placeholder='Enter actors' label='Actors' />
           </div>
           <div className='field plot'>
-            <Field type='text' component={renderTextarea} required={true} name='plot' id='plot' validate={validateText} placeholder='Enter movie description' />
+            <Field component={renderTextarea} name='plot' id='plot' required={true} validate={validateText} placeholder='Enter movie description' />
           </div>
           <div className='field posterUrl'>
-            <Field type='url' component={renderField} required={true} name='posterUrl' id='posterUrl' placeholder='Enter poster url' label='Poster' />
+            <Field type='url' component={renderField} name='posterUrl' id='posterUrl' required={true} validate={validateText} placeholder='Enter poster url' label='Poster' />
           </div>
           <div className='field submit'>
             <button type='submit' className='btn btn--primary'>Add</button>
           </div>
         </form>
-        <NotificationContainer />
       </section>
     )
   }

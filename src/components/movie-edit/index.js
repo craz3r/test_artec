@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { renderField, renderTextarea } from '../shared/fields';
+import { validateYear, validateText } from '../../helpers/validators';
 import './style.css';
-
-const validateYear = value => (value > 0 && value < (new Date()).getFullYear() + 1 ? undefined : 'Invalid year');
-const validateText = value => (value !== '' ? undefined : 'Please fill this field');
 
 class MovieEdit extends Component {
   editMovie = (values) => {
@@ -20,7 +18,7 @@ class MovieEdit extends Component {
         <h1 className='add__title'>Edit</h1>
         <form className='add__form' onSubmit={this.props.handleSubmit(this.editMovie)}>
           <div className='field title'>
-            <Field type='text' component={renderField} required name='title' id='title' validate={validateText} placeholder='Enter title' label='Title' />
+            <Field type='text' component={renderField} name='title' id='title' required={true} validate={validateText} placeholder='Enter title' label='Title' />
           </div>
           <div className='field year'>
             <Field type='number' component={renderField} name='year' id='year' validate={validateYear} placeholder='Enter year' label='Year' />
@@ -45,10 +43,10 @@ class MovieEdit extends Component {
             <Field type='text' component={renderField} name='actors' id='actors' placeholder='Enter actors' label='Actors' />
           </div>
           <div className='field plot'>
-            <Field type='text' component={renderTextarea} required name='plot' id='plot' placeholder='Enter movie description' validate={validateText} />
+            <Field type='text' component={renderTextarea} name='plot' id='plot' required={true} placeholder='Enter movie description' validate={validateText} />
           </div>
           <div className='field posterUrl'>
-            <Field type='url' component={renderField} required name='posterUrl' id='posterUrl' placeholder='Enter url address' label='Poster' />
+            <Field type='url' component={renderField} name='posterUrl' id='posterUrl' required={true} placeholder='Enter url address' label='Poster' validate={validateText} />
           </div>
           <div className='field submit'>
             <button type='submit' className='btn btn--primary'>Save</button>

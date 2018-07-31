@@ -28,7 +28,7 @@ export const renderTextarea = ({
   meta: { touched, error }
 })  => (
   <div>
-    <textarea {...input} placeholder={placeholder} id={id} name={name} required={required} ></textarea>
+    <textarea {...input} placeholder={placeholder} id={id} name={name} required={required} />
     {touched &&
       ((error && <span className='valid-error'>{error}</span>))}
     <label htmlFor={id}>{label}</label>
