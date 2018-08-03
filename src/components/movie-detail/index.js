@@ -14,16 +14,16 @@ export default class MovieDetail extends Component {
           <h1 className='detail__title'>{detail.title}</h1>
           <div className='headline'>
             <div className='detail__info'>
-              <time className='detail__year'>Year: {detail.year}</time>
-              <p className='detail__runtime'>Runtime: {detail.runtime} min.</p>
+              <time className='detail__year'>Year: {detail.year ? detail.year : 'Unknown'}</time>
+              <p className='detail__runtime'>Runtime: {detail.runtime ? detail.runtime + 'min.' : 'Unknown'}</p>
               <ul className='detail__genres'>
                 Genres:
-                {detail.genres.map((g, idx) => {
+                {detail.genres && detail.genres.length ? detail.genres.map((g, idx) => {
                   return <li key={idx} className='detail__genre'>{g}</li>
-                })}
+                }) : 'Unknown'}
               </ul>
-              <p className='detail__director'>Director: {detail.director}</p>
-              <p className='detail.actors'>Actors: {detail.actors}</p>
+              <p className='detail__director'>Director: {detail.director ? detail.director : 'Unknown'}</p>
+              <p className='detail.actors'>Actors: {detail.actors ? detail.actors : 'Unknown'}</p>
               <p className='detail__plot'>{detail.plot}</p>
             </div>
             <div className='detail__poster'>
