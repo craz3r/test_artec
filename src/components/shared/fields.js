@@ -25,12 +25,15 @@ export const renderTextarea = ({
   name,
   required,
   placeholder,
-  meta: { touched, error }
-})  => (
-  <div>
-    <textarea {...input} placeholder={placeholder} id={id} name={name} required={required} />
-    {touched &&
-      ((error && <span className='valid-error'>{error}</span>))}
-    <label htmlFor={id}>{label}</label>
-  </div>
-)
+  meta: { touched, error, invalid }
+})  => {
+  invalid = false;
+  return (
+    <div>
+      <textarea {...input} placeholder={placeholder} id={id} name={name} required={required} />
+      {touched &&
+        ((error && <span className='valid-error'>{error}</span>))}
+      <label htmlFor={id}>{label}</label>
+    </div>
+  )
+}

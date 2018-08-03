@@ -19,7 +19,7 @@ class MovieAdd extends Component {
         <h1 className='add__title'>Add new movie</h1>
         <form className='add__form' onSubmit={this.props.handleSubmit(this.addMovie)}>
           <div className='field title'>
-            <Field type='text' component={renderField} name='title' id='title' required={true} validate={validateText} placeholder='Enter title' label='Title' />
+            <Field type='text' component='input' name='title' id='title' required={true} validate={validateText} placeholder='Enter title' label='Title' />
           </div>
           <div className='field year'>
             <Field type='number' component={renderField} name='year' id='year' validate={validateYear} placeholder='Enter year' label='Year' />
@@ -50,7 +50,7 @@ class MovieAdd extends Component {
             <Field type='url' component={renderField} name='posterUrl' id='posterUrl' required={true} validate={validateText} placeholder='Enter poster url' label='Poster' />
           </div>
           <div className='field submit'>
-            <button type='submit' className='btn btn--primary'>Add</button>
+            <button type='submit' disabled={this.props.pristine} className='btn btn--primary'>Add</button>
           </div>
         </form>
       </section>

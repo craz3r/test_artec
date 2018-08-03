@@ -46,11 +46,20 @@ h3 {
 
 .header__link {
   color: #fff;
-  text-decoration: none;
-  transition: color .3s ease-in;
+  transition: all .3s ease-in;
+
+  &:active {
+    color: rgba(255, 255, 255, .75);
+  }
 
   &:hover {
     color: #9a9a9a;
+    text-decoration: none;
+  }
+
+  &--active {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
   }
 }
 
@@ -81,6 +90,11 @@ h3 {
   border: 1px solid transparent;
   margin: 0;
   transition: all .3s ease-in;
+
+  &:disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
 
   &:hover {
     cursor: pointer;

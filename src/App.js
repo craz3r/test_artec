@@ -4,7 +4,7 @@ import MovieDetailContainer from './containers/movie-detail';
 import MovieAddContainer from './containers/movie-add';
 import MovieEditContainer from './containers/movie-edit';
 import { NotificationContainer } from 'react-notifications';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import 'react-notifications/lib/notifications.css';
 
@@ -17,8 +17,8 @@ class App extends Component {
             <p className='header__title'>Welcome to Movies App</p>
             <nav className='header__nav'>
               <ul>
-                <li><Link to='/' className='header__link'>List of movies</Link></li>
-                <li><Link to='/add' className='header__link'>Add new movie</Link></li>
+                <li><NavLink to='/' exact activeClassName='header__link--active' className='header__link'>List of movies</NavLink></li>
+                <li><NavLink to='/add' activeClassName='header__link--active' className='header__link'>Add new movie</NavLink></li>
               </ul>
             </nav>
           </div>
